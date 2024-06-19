@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictor</title>
+</head>
+<body>
+    <h1>Enter values for all columns except the last four:</h1>
+    <form action="/predict" method="post">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+        
+        <label for="sex">Sex:</label>
+        <select id="sex" name="sex">
+            <option value="0">1</option>
+            <option value="1">2</option>
+        </select><br><br>
+        
+        <label for="wearables">Wearables:</label>
+        <select id="wearables" name="wearables">
+            <option value="1">glasses</option>
+            <option value="2">contact lenses only</option>
+            <option value="3">None</option>
+            <option value="4">Both at one or other time</option>
+            <option value="5">not applicable</option>
+        </select><br><br>
+
+        <label for="duration">Duration:</label>
+        <select id="wearables" name="wearables">
+            <option value="1.0">less than 5 years</option>
+            <option value="2.0">5-10 years</option>
+            <option value="3.0">more than 10 years </option>
+
+        </select><br><br>
+
+        <!-- <input type="number" id="duration" name="duration"><br><br> -->
+
+        <label for="onlineplatforms">Online Platforms:</label>
+        <select id="onlineplatforms" name="onlineplatforms">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <label for="nature">Nature:</label>
+        <select id="nature" name="nature">
+            <option value="0">1</option>
+            <option value="1">Outdoor</option>
+        </select><br><br>
+
+        <label for="gadgetsused">Gadgets Used:</label>
+        <select id="gadgetsused" name="gadgetsused">
+            <option value="0">None</option>
+            <option value="1">1-2</option>
+            <option value="2">3-4</option>
+            <option value="3">5 or more</option>
+        </select><br><br>
+
+        <label for="levelofgadjetwithrespecttoeyes">Level of Gadget with Respect to Eyes:</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="levelofgadjetwithrespecttoeyes">
+            <option value="0">Low</option>
+            <option value="1">Medium</option>
+            <option value="2">High</option>
+        </select><br><br>
+
+        <label for="screenillumination">Screen Illumination:</label>
+        <input type="number" id="screenillumination" name="screenillumination"><br><br>
+
+        <label for="workingyears">Working Years:</label>
+        <input type="number" id="workingyears" name="workingyears"><br><br>
+
+        <label for="hoursspentdailycurricular">Hours Spent Daily (Curricular):</label>
+        <input type="number" id="hoursspentdailycurricular" name="hoursspentdailycurricular"><br><br>
+
+        <label for="hoursspentdailynoncurricular">Hours Spent Daily (Non-curricular):</label>
+        <input type="number" id="hoursspentdailynoncurricular" name="hoursspentdailynoncurricular"><br><br>
+
+        <label for="distancekeptbetweeneyesandgadjet">Distance Kept Between Eyes and Gadget:</label>
+        <input type="number" id="distancekeptbetweeneyesandgadjet" name="distancekeptbetweeneyesandgadjet"><br><br>
+
+        <label for="avgnighttimeusageperday">Average Nighttime Usage per Day:</label>
+        <input type="number" id="avgnighttimeusageperday" name="avgnighttimeusageperday"><br><br>
+
+        <label for="blinkingduringscreenusage">Blinking During Screen Usage:</label>
+        <select id="blinkingduringscreenusage" name="blinkingduringscreenusage">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <label for="difficultyinfocusingafterusingscreens">Difficulty in Focusing After Using Screens:</label>
+        <select id="difficultyinfocusingafterusingscreens" name="difficultyinfocusingafterusingscreens">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <label for="freqquencyofcomplaints">Frequency of Complaints:</label>
+        <input type="number" id="freqquencyofcomplaints" name="freqquencyofcomplaints"><br><br>
+
+          <label for="severityofcomplaints">Severity of Complaints:</label>
+          <input type="number" id="severityofcomplaints" name="severityofcomplaints"><br><br>
+  
+          <label for="RVIS">RVIS:</label>
+          <input type="number" id="RVIS" name="RVIS"><br><br>
+  
+          <label for="ocularsymptomsobservedlately">Ocular Symptoms Observed Lately:</label>
+          <input type="number" id="ocularsymptomsobservedlately" name="ocularsymptomsobservedlately"><br><br>
+  
+          <label for="symptomsobservingatleasthalfofthetimes">Symptoms Observing at Least Half of the Times:</label>
+          <input type="number" id="symptomsobservingatleasthalfofthetimes" name="symptomsobservingatleasthalfofthetimes"><br><br>
+  
+          <label for="complaintsfrequency">Complaints Frequency:</label>
+          <input type="number" id="complaintsfrequency" name="complaintsfrequency"><br><br>
+  
+          <label for="frequencyofdryeyes">Frequency of Dry Eyes:</label>
+          <input type="number" id="frequencyofdryeyes" name="frequencyofdryeyes"><br><br>
+  
+          
+          <button type="submit">Predict</button>
+      </form>
+  </body>
+  </html>
+  

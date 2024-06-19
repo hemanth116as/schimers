@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to bottom right, #a7e9af, #82bbe7);
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="{{url_for('predict')}}" method="post">
+        <h1 center="true">SchimerScan: Eye Health Analysis</h1>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+        
+        <label for="sex">Sex:</label>
+        <select id="sex" name="sex">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select><br><br>
+        
+        <label for="wearables">Wearables:</label>
+        <select id="wearables" name="wearables">
+            <option value="1">No</option>
+            <option value="2">Yes</option>
+            <option value="3">Yes</option>
+            <option value="4">Yes</option>
+            <option value="5">Yes</option>
+        </select><br><br>
+
+        <label for="duration">Duration:</label>
+       
+        <select id="wearables" name="duration">
+            <option value="1">less than 5</option>
+            <option value="2">5-10</option>
+            <option value="3">more than 10</option>
+           
+        </select><br><br>
+       
+
+        <label for="onlineplatforms">Online Platforms:</label>
+        <select id="onlineplatforms" name="onlineplatforms">
+            <option value="2">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <label for="nature">Nature:</label>
+        <select id="nature" name="nature">
+            <option value="1">Continous</option>
+            <option value="2">interupted</option>
+        </select><br><br>
+
+        <label for="gadgetsused">Screen Illumination</label>
+        <select id="gadgetsused" name="screen">
+            <option value="1"> &lt;25</option>
+            <option value="2">25-50</option>
+            <option value="3">&gt;50</option>
+            
+        </select><br><br>
+
+        <label for="levelofgadjetwithrespecttoeyes">workingyears</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="workingyears">
+            <option value="1">&lt;5</option>
+            <option value="2">5-10</option>
+            <option value="3">&gt;10</option>
+        </select><br><br>
+
+        <label for="screenillumination">hoursspentdailycurricular</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="ciruclar">
+            <option value="1">2-4</option>
+            <option value="2">4-6</option>
+            <option value="3">6-8</option>
+            <option value="4">8-10</option>
+        </select><br><br>
+
+        <label for="screenillumination">hoursspentdailynoncurricular</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="noncirclaur">
+            <option value="1">less that 2hours</option>
+            <option value="2">2-4</option>
+            <option value="3">4-6</option>
+            <option value="4">6-8</option>
+        </select><br><br>
+        <label for="screenillumination">Gadgetsused</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="gadgetsused">
+            <option value="1">mobile</option>
+            <option value="2">laptop</option>
+            <option value="3">tablet</option>
+            
+        </select><br><br>
+
+        <label for="screenillumination">levelofgadjetwithrespecttoeyes</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="levelofgadjetwithrespecttoeyes">
+            <option value="1">above the level 1 hour</option>
+            <option value="2">at the levels of eyes</option>
+           
+        </select><br><br>
+
+        <label for="screenillumination">Distancekeptbetweeneyesandgadjet</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="Distancekeptbetweeneyesandgadjet">
+            <option value="1">Less than 25 cm</option>
+            <option value="2">25-40 cm</option>
+            <option value="3">more than 40 cm</option>
+           
+        </select><br><br>
+        <label for="screenillumination">Avgnighttimeusageperday</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="Avgnighttimeusageperday">
+            <option value="1">Less than 1 hour</option>
+            <option value="2">1-2 hours</option>
+            <option value="3">2-4 hours</option>
+            <option value="4">more than hours</option>
+           
+        </select><br><br>
+        <label for="screenillumination">Blinkingduringscreenusage</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="Blinkingduringscreenusage">
+            <option value="1">yes</option>
+            <option value="2">no</option>
+          
+           
+        </select><br><br>
+        <label for="screenillumination">Difficultyinfocusingafterusingscreens</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="Difficultyinfocusingafterusingscreens">
+            <option value="1">yes</option>
+            <option value="2">no</option>
+            <option value="3">may be</option>
+          
+           
+        </select><br><br>
+        <label for="screenillumination">freqquencyofcomplaints</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="freqquencyofcomplaints">
+            <option value="0">0-Never</option>
+            <option value="1">1-&lt;5 times a week</option>
+            <option value="2">2->5times a week</option>
+          
+           
+        </select><br><br>
+        <label for="screenillumination">Severityofcomplaints</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="Severityofcomplaints">
+            <option value="0">0-Never</option>
+            <option value="1">1-disturbs work</option>
+            <option value="2">2-Severe enough to stop work and take rest</option>
+          
+           
+        </select><br><br>
+        <label for="screenillumination">RVIS</label>
+        <select id="levelofgadjetwithrespecttoeyes" name="RVIS">
+            <option value="0">0</option>
+            <option value="1">1</option>
+           
+          
+           
+        </select><br><br>
+      
+
+      
+       
+      </select>
+      <label for="Complaintsfrequency">Complaintsfrequency</label>
+      <select id="Complaintsfrequency" name="Complaintsfrequency">
+          <option value="1">never</option>
+          <option value="2">&lt;5 times a week</option>
+          <option value="3">&gt;5 time a week</option> 
+           
+        
+         
+      </select><br><br>
+      <label for="frequencyofdryeyes">frequencyofdryeyes</label>
+      <select id="frequencyofdryeyes" name="frequencyofdryeyes">
+          <option value="1">often</option>
+          <option value="2">sometimes</option>
+          <option value="3">never</option> 
+           
+        
+         
+      </select><br><br>
+       
+  
+
+<input type="checkbox" name="Ocularsymptomsobservedlately" id="heavines tired eyes" value="1">
+<label for="heavines tired eyes">heavines tired eyes</label><br>
+
+<input type="checkbox" name="Ocularsymptomsobservedlately" id="redness in eyes" value="2">
+<label for="redness in eyes">redness in eyes</label><br>
+
+<input type="checkbox" name="Ocularsymptomsobservedlately" id="watering from eyes" value="3">
+<label for="watering from eyes">watering from eyes</label><br>
+
+<input type="checkbox" name="Ocularsymptomsobservedlately" id="feeling of grittiness" value="4">
+<label for="feeling of grittiness">feeling of grittiness</label><br>
+
+<input type="checkbox" name="Ocularsymptomsobservedlately" id="itchy eyes" value="5">
+<label for="itchy eyes">itchy eyes</label><br>
+
+<input type="checkbox" name="Ocularsymptomsobservedlately" id="transient blurring of vison" value="6">
+<label for="transient blurring of vison">transient blurring of vison</label><br>
+
+<input type="checkbox" name="Ocularsymptomsobservedlately" id="sensitvity to bright" value="7">
+<label for="sensitvity to bright">sensitvity to bright</label><br>
+
+<input type="checkbox" name="Ocularsymptomsobservedlately" id="contact lens discomfort" value="8">
+<label for="contact lens discomfort">contact lens discomfort</label><br>
+
+<input type="checkbox" name="Ocularsymptomsobservedlately" id="headache" value="9">
+<label for="headache">headache</label><br>
+
+<input type="checkbox" name="Ocularsymptomsobservedlately" id="other" value="10">
+<label for="other">other</label><br>
+
+<input type="checkbox" name="Symptomsobservingatleasthalfofthetimes" id="heavines tired eyes" value="1">
+<label for="heavines tired eyes">heavines tired eyes</label><br>
+
+<input type="checkbox" name="Symptomsobservingatleasthalfofthetimes" id="redness in eyes" value="2">
+<label for="redness in eyes">redness in eyes</label><br>
+
+<input type="checkbox" name="Symptomsobservingatleasthalfofthetimes" id="watering from eyes" value="3">
+<label for="watering from eyes">watering from eyes</label><br>
+
+<input type="checkbox" name="Symptomsobservingatleasthalfofthetimes" id="feeling of grittiness" value="4">
+<label for="feeling of grittiness">feeling of grittiness</label><br>
+
+<input type="checkbox" name="Symptomsobservingatleasthalfofthetimes" id="itchy eyes" value="5">
+<label for="itchy eyes">itchy eyes</label><br>
+
+
+
+
+
+
+
+
+          
+          <button type="submit">Predict</button>
+      </form>
+  </body>
+  </html>
